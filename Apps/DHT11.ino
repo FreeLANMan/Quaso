@@ -19,6 +19,7 @@ void setup() {
   float hmin = 100;
   float tmax = 0;
   float tmin = 100;
+  byte vez = 1;
 }
 
 
@@ -28,6 +29,9 @@ void setup() {
 void Aplicativo1() { 
   // termometro para Quaso
   tela = 1;
+  if (vez == 1) {
+    long inicio = millis() / 1000; // quantos segundos passaram desde que iniciou o sistema
+  }
   display.clear(); // clear the display
   float h = dht.getHumidity(); // pega a umidade
   float t = dht.getTemperature(); // pega a temperatura
@@ -40,10 +44,17 @@ void Aplicativo1() {
   tmax = max(tmax,h);
   tmin = min(tmin,h);
   display.drawString(rnd1,40,"Máxima: " + String(tmax) + "  Mínima: " + String(tmin));
+  long tsegs = (millis()/1000) - inicio;
+  if (tsegs > 3600) {
+    display.drawString(rnd1,50,"Tempo ativo: " + String(tsegs) + " horas");
+  else if ((tsegs > 60) {
+    display.drawString(rnd1,50,"Tempo ativo: " + String(tsegs) + " minutos"); }
+  else {
+    display.drawString(rnd1,50,"Tempo ativo: " + String(tsegs) + " segundos");}
+  }
+  
   delay(2000);
-  time = millis();
-  int minutos = time / 3600000
-  display.drawString(rnd1,40,"Máxima: " + String(tmax) + "  Mínima: " + String(tmin));
+  vez = 2;
 }
 
 
