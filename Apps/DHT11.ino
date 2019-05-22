@@ -41,6 +41,9 @@ void Aplicativo1() {
   tmin = min(tmin,h);
   display.drawString(rnd1,40,"Máxima: " + String(tmax) + "  Mínima: " + String(tmin));
   delay(2000);
+  time = millis();
+  int minutos = time / 3600000
+  display.drawString(rnd1,40,"Máxima: " + String(tmax) + "  Mínima: " + String(tmin));
 }
 
 
