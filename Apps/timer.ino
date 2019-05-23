@@ -11,9 +11,9 @@ void setup() {
 
 // app timer
   byte start = 0;
-  int horas = 0;
-  int minutos = 0;
-  int segundos = 0;
+  int horas = -1;
+  int minutos = -1;
+  int segundos = -1;
 }
 
 
@@ -27,22 +27,44 @@ void Aplicativo1() { // troque por um número de aplicativo livre como 'Aplicati
     display.drawString(rnd1,0,"Timer" );
     display.drawString(rnd1,20,"Definir número de horas:" );
     if ((digitalRead(botao1) == HIGH) && (tela == 1)) { // botão esquerdo foi apertado
-      if horas == 0 {
-      horas = 99;}
-      else {
-      horas = horas - 1;
+      if horas == 0 { horas = 99;}
+      else { horas = horas - 1; }
       display.drawString(rnd1,30, string(horas) + " horas");
-      
+    }
     if ((digitalRead(botao2) == HIGH) && (tela == 1)) { // botão direito foi apertado
-      if horas == 99 {
-      horas = 0;}
-      else {
-      horas = horas + 1;
+      if horas == 99 { horas = 0;}
+      else { horas = horas + 1; }
       display.drawString(rnd1,30, string(horas) + " horas");
-  
-     if ((digitalRead(botao3) == HIGH) && (tela == 1) && (tela == 1) ) { // botão Ok foi apertado
-      display.drawString(rnd1,20, string(horas) + " horas"); 
-  
+    }
+    if ((digitalRead(botao3) == HIGH) && (tela == 1) && (horas != -1) ) { // botão Ok foi apertado
+      display.drawString(rnd1,20, "Definir número de minutos:"); 
+      if ((digitalRead(botao1) == HIGH) && (tela == 1)) { // botão esquerdo foi apertado
+        if minutos == 0 { minutos = 59;}
+        else { minutos = minutos - 1; }
+        display.drawString(rnd1,30, string(horas) + " horas");
+      }
+      if ((digitalRead(botao2) == HIGH) && (tela == 1)) { // botão direito foi apertado
+        if minutos == 59 { minutos = 0;}
+        else { minutos = minutos + 1; }
+        display.drawString(rnd1,30, string(minutos) + " minutos"); 
+      }
+     if ((digitalRead(botao3) == HIGH) && (tela == 1) && (minutos != -1) ) { // botão Ok foi apertado
+      display.drawString(rnd1,20, "Definir número de segundos:"); 
+      if ((digitalRead(botao2) == HIGH) && (tela == 1)) { // botão direito foi apertado
+        if segundos == 59 { segundos = 0; }
+        else { segundos = segundos + 1; }
+        display.drawString(rnd1,30, string(segundos) + " segundos"); 
+      }
+    }
+    if ((digitalRead(botao3) == HIGH) && (tela == 1) && (segundos != -1) ) { // botão Ok foi apertado
+      display.drawString(rnd1,20, string(horas) + ":" + string(minutos) + ":" + string(segundos)); 
+      display.drawString(rnd1,30, "Clique Ok para iniciar a contagem");
+      delay(600);
+      If ((digitalRead(botao3) == HIGH) { start = 1; }
+    }
+  }
+          
+          
       long inicio = millis() / 1000; // quantos segundos passaram desde que iniciou o sistema
       byte start = 1; }
   }
