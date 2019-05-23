@@ -34,7 +34,7 @@ byte rnd1; // variável da posição do menu para ela variar e evitar o efeito b
 
 
 
-void setup() {  // put your setup code here, to run once:
+void setup() {  // Configurações 
   display.init();  // inicializando o display
   randomSeed(analogRead(0)); // semente para a criação de números randonômicos 
   pinMode(botao1, INPUT);
@@ -87,7 +87,7 @@ void Aplicativo3() {
 
 
 
-void loop() {  // put your main code here, to run repeatedly:
+void loop() {  // Código principal que sempre repete
   // 128 em caracteres de 5: 123456789012  123456789012 123456789012 123456789012 123456789012 
   display.setFont(ArialMT_Plain_10); // definição da fonte: pequena
   rnd1 = random(10); // Definição aleatória de posição inicial para evitar efeito burn in
