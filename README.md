@@ -11,7 +11,7 @@ Hardware:
 - 3 botões: Dois botões para percorrer confortavelmente opções e um para confirmar a opção. É uma entrada facilmente encontrada e barata.
 - Vários sensores e módulos conforme a disponibilidade e interesse do usuário.
 
-
+Para mais detalhes acesse o wiki: https://github.com/FreeLANMan/Quaso/wiki
 
 
 
