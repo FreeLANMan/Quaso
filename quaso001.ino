@@ -34,6 +34,12 @@ byte rnd1; // variável da posição do menu para ela variar e evitar o efeito b
 
 
 
+// Definição de quais sensores estão instalados
+bool DHT11 = false;
+
+
+
+
 void setup() {  // Configurações 
   display.init();  // inicializando o display
   randomSeed(analogRead(0)); // semente para a criação de números randonômicos 
