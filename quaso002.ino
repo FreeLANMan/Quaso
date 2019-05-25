@@ -2,6 +2,13 @@
 // Autor: Adrian Rupp
 
 //Lista de bibliotecas incluidas
+#include <ESP8266WiFi.h>//Biblioteca que gerencia o WiFi.
+#include <WiFiServer.h>//Biblioteca que gerencia o uso do TCP.
+
+WiFiServer servidor(80);//Cria um objeto "servidor" na porta 80 (http).
+WiFiClient cliente;//Cria um objeto "cliente".
+
+String html;//String que armazena o corpo do site.
 #include <Wire.h>  // Necessária para usar o display
 #include "SSD1306Wire.h"  // Necessária para usar o display
 
@@ -33,6 +40,8 @@ byte napp = 3; // variável que quarda quantos app estão incluidos, mínimo ace
 byte rnd1; // variável da posição do menu para ela variar e evitar o efeito burn in do oled
 
 
+bool  server = true; variavel que indica se o webserver está ativado
+
 
 // Definição de quais sensores estão instalados
 bool DHT11 = false;
@@ -47,12 +56,36 @@ void setup() {  // Configurações
   pinMode(botao2, INPUT);
   pinMode(botao3, INPUT);
 
+  WiFi.mode(WIFI_STA);//Habilita o modo STATION.
+  WiFi.begin("SUA REDE", "SUA SENHA");//Conecta no WiFi (COLOQUE O NOME E SENHA DA SUA REDE!).
+  servidor.begin();//Inicia o Servidor.
+  
   // app1 
   dht.setup(D5, DHTesp::DHT11);
   float hmax = 0;
   float hmin = 100;
   float tmax = 0;
   float tmin = 100;
+}
+
+
+void imprime() { // função que imprime na tela e/ou no server.
+  if server == true { // checa se o webserver está ativado
+    html += "HTTP/1.1 Content-Type: text/html\n\n";//Identificaçao do HTML.
+    html += "<!DOCTYPE html><html><head><title>Quaso</title>";//Identificaçao e Titulo.
+    html += "<meta name='viewport' content='user-scalable=no'>";//Desabilita o Zoom.
+    html += "<style>h1{font-size:2vw;color:white;}</style></head>";//Cria uma nova fonte de tamanho e cor X.
+    html += "<body bgcolor='000000'><center><h1>";//Cor do Background
+    
+    html += "<"  + >"
+    cliente.println("<h1>Meu primeiro Servidor Web</h1>");
+      
+    html += "</h1></center></body></html>";//Termino e fechamento de TAG`s do HTML. Nao altere nada sem saber!
+      cliente.print(html);//Finalmente, enviamos o HTML para o cliente.
+      cliente.stop();//Encerra a conexao.
+    
+      //Estas linhas acima sao parte essencial do codigo, só altere se souber o que esta fazendo!
+  }  
 }
 
 
@@ -148,6 +181,11 @@ void loop() {  // Código principal que sempre repete
     Aplicativo3;
   }
 
+
+  
+  
+  
+  
 
   delay(1000); 
 }
