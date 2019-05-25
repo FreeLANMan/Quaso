@@ -53,7 +53,7 @@ void Aplicativo1() {
     display.drawString(rnd1,50,"Tempo ativo: " + String(tsegs) + " segundos");}
   }
   
-  delay(2000);
+  delay(10000); // tempo de 10s para resposta do sensor
   vez = 2;
 }
 
