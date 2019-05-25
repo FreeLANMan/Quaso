@@ -74,18 +74,20 @@ void imprime() { // função que imprime na tela e/ou no server.
     html += "HTTP/1.1 Content-Type: text/html\n\n";//Identificaçao do HTML.
     html += "<!DOCTYPE html><html><head><title>Quaso</title>";//Identificaçao e Titulo.
     html += "<meta name='viewport' content='user-scalable=no'>";//Desabilita o Zoom.
-    html += "<style>h1{font-size:2vw;color:white;}</style></head>";//Cria uma nova fonte de tamanho e cor X.
+    html += "<style>h1{font-size:2vw;color:white;}</style>";//Cria uma nova fonte de tamanho e cor X.
+    html += "<meta http-equiv="refresh" content="30"></head>" // atualiza a página a cada 30 segundos
     html += "<body bgcolor='000000'><center><h1>";//Cor do Background
     
-    html += "<"  + >"
-    cliente.println("<h1>Meu primeiro Servidor Web</h1>");
-      
+    html += "<" + linha1  + ">";
+
     html += "</h1></center></body></html>";//Termino e fechamento de TAG`s do HTML. Nao altere nada sem saber!
       cliente.print(html);//Finalmente, enviamos o HTML para o cliente.
       cliente.stop();//Encerra a conexao.
-    
       //Estas linhas acima sao parte essencial do codigo, só altere se souber o que esta fazendo!
   }  
+  if tela == true { // checa se o sistema tem uma tela
+    
+  }
 }
 
 
