@@ -1,3 +1,7 @@
+// esse app é só um esboço não leve a sério
+
+
+
 // ------------------------------------------------------------
 // Área para inclusão de bibliotecas e definições necessárias -
 // ------------------------------------------------------------
