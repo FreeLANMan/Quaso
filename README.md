@@ -20,7 +20,7 @@ Criar um QUAse Sistema Operacional para o Wemos D1 Mini (https://wiki.wemos.cc/p
 - Placa Wemos D1 Mini. É uma placa com 4Mb de flash o que facilita criar um código para várias funções. Também é interessante por ser barata (mais barata que um Arduino Uno), facilmente encontrada e muito pequena.
 - 3 botões: Dois botões para percorrer confortavelmente opções e um para confirmar a opção. É uma entrada facilmente encontrada e barata.
 ### Opcionais:
-- Display: Oled 128x64 pixels I2C. É um meio termo entre os led (mais baratos mas passam pouca informação) e os displays mais caros (e que apresentam fotos coloridas).
+- Display: Oled 128x64 pixels I2C. É um meio termo entre os LEDs que passam pouca informação (mas são mais baratos) e os displays mais caros (e que apresentam fotos coloridas).
 - Vários sensores e módulos conforme a disponibilidade e interesse do usuário.
 
 Para mais detalhes acesse o wiki: https://github.com/FreeLANMan/Quaso/wiki
