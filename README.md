@@ -9,6 +9,7 @@ Criar um QUAse Sistema Operacional para o Wemos D1 Mini (https://wiki.wemos.cc/p
   - Abertura automática de mini ap (ponto de acesso wi-fi);
   - Coleta automática de hora certa da Internet;
   - Modelo de desenvolvimento modular tanto para o hardware quanto para o software;
+  - Voltado para quem usa a lingua portuguesa.
 
   Recursos futuros:
   - Suporte para mini displays OLED;
